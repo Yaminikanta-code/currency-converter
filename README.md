@@ -1,8 +1,29 @@
-# React + Vite
+# Currency Converter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based currency converter app that allows users to convert between different currencies using a live API. It features a custom hook to fetch exchange rates and includes a swap functionality to switch between "from" and "to" currencies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Real-time exchange rates**: Fetches live data from the [Currency API](https://github.com/fawazahmed0/currency-api).
+- **Custom hook**: Implements a reusable `useCurrencyConverter` hook for fetching and managing currency data.
+- **Swap functionality**: Easily swap "from" and "to" currencies.
+- User-friendly interface with intuitive controls.
+
+  ## API Reference
+
+The app uses the [Currency API](https://github.com/fawazahmed0/currency-api) for real-time exchange rate data. Below is an overview of the API and how it is utilized in this app.
+
+
+### Endpoints
+
+- **Get Exchange Rates for a Currency**
+  - **URL**:  
+    ```
+    https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/{currency}.json
+    ```
+  - **Method**: `GET`
+  - **Path Parameter**:  
+    - `currency`: The base currency code (e.g., `usd`, `eur`, `inr`, etc.).
+  - **Response**: Returns an object containing exchange rates for all available currencies relative to the base currency.
